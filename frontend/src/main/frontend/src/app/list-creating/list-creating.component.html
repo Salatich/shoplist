@@ -1,0 +1,17 @@
+<p>
+  Insert the item of list
+</p>
+
+<input type="text" placeholder="item" #item>
+
+<button (click)="addItem(item.value)" class="btn-default btn">add</button>
+
+<ul class="list">
+  <li
+    *ngFor="let item of items; let i = index"
+    class="list__item item"
+  >
+    <span class="item__num">{{i+1}}.</span>
+    {{item}}
+  </li>
+</ul>
