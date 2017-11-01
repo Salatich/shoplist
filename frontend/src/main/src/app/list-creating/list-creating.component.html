@@ -1,10 +1,14 @@
+
+<p>
+  Insert the name of list
+</p>
+<input type="text" placeholder="name" [(ngModel)]="listName">
 <p>
   Insert the item of list
 </p>
+<input type="text" placeholder="item" [(ngModel)]="item">
 
-<input type="text" placeholder="item" #item>
-
-<button (click)="addItem(item.value)" class="btn-default btn">add</button>
+<button (click)="addItem()" class="btn btn-primary">add</button>
 
 <ul class="list">
   <li
@@ -15,3 +19,5 @@
     {{item}}
   </li>
 </ul>
+
+<a href="" (click)="saveList()" class="btn btn-success">save list</a>

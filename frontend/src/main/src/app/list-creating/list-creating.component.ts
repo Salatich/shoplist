@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {IList} from "../IList";
+// import {dataService} from "../services/data.service"
 
 @Component({
   selector: 'app-list-creating',
@@ -7,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListCreatingComponent implements OnInit {
 
+  list:IList;
+
+  listName:string = '';
+  item:string = '';
   items:string[] = [];
 
   constructor() { }
@@ -15,8 +21,14 @@ export class ListCreatingComponent implements OnInit {
   }
 
 
-  addItem(item:string){
-    item && this.items.push(item);
+  addItem(){
+    this.item && this.items.push(this.item);
+    this.item = '';
+
+  }
+  saveList(){
+    this.list.name = this.listName;
+    this.list.body = this.items;
   }
 
 
