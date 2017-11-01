@@ -1,6 +1,5 @@
 package application.shoplist;
 
-import config.JpaConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,6 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class  ShoplistApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(new Class<?>[] {ShoplistApplication.class, JpaConfig.class}, args);
+		SpringApplication.run(ShoplistApplication.class, args);
 	}
 }
