@@ -10,3 +10,18 @@
 .item__num{
   margin-right: 5px;
 }
+
+
+.disable{
+  pointer-events: none;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  font-weight: bold;
+  background: transparent;
+}
+
+.text-input{
+  padding: 5px;
+  outline: none;
+}

@@ -1,12 +1,25 @@
 
-<p>
-  Insert the name of list
-</p>
-<input type="text" placeholder="name" [(ngModel)]="listName">
+<label>
+  Insert the name of list:
+</label>
+<input
+  class="text-input"
+  type="text"
+  placeholder="name"
+  [(ngModel)]="listTitle"
+  (keypress)="saveListTitle($event)"
+  [class.disable]="savedTitle"
+  [disabled]="savedTitle"
+>
 <p>
   Insert the item of list
 </p>
-<input type="text" placeholder="item" [(ngModel)]="item">
+<input
+  class="text-input"
+  type="text"
+  placeholder="item"
+  [(ngModel)]="item"
+>
 
 <button (click)="addItem()" class="btn btn-primary">add</button>
 
@@ -16,8 +29,8 @@
     class="list__item item"
   >
     <span class="item__num">{{i+1}}.</span>
-    {{item}}
+    {{item.description}}
   </li>
 </ul>
 
-<a href="" (click)="saveList()" class="btn btn-success">save list</a>
+<a href="#" (click)="saveList()" class="btn btn-success">save list</a>

@@ -1,34 +1,53 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {IList} from "../IList";
-// import {dataService} from "../services/data.service"
+import {IItem} from "../IItem";
+import {DataService} from "../services/data.service";
 
 @Component({
   selector: 'app-list-creating',
   templateUrl: './list-creating.component.html',
-  styleUrls: ['./list-creating.component.css']
+  styleUrls: ['./list-creating.component.css'],
+  providers: [DataService]
 })
 export class ListCreatingComponent implements OnInit {
 
-  list:IList;
+  savedTitle: boolean = false;
+  listTitle: string;
+  item: string;
+  items: IItem[] = [];
 
-  listName:string = '';
-  item:string = '';
-  items:string[] = [];
 
-  constructor() { }
+  list: IList = new IList();
+
+  constructor(private dataService: DataService) {
+  }
 
   ngOnInit() {
   }
 
 
-  addItem(){
-    this.item && this.items.push(this.item);
+  addItem() {
+    this.item && this.items.push(
+      new IItem(this.item)
+    );
     this.item = '';
 
   }
-  saveList(){
-    this.list.name = this.listName;
-    this.list.body = this.items;
+
+  saveList() {
+    this.list.name = this.listTitle;
+    this.list.items = this.items;
+    console.log(JSON.stringify(this.list));
+    this.dataService.postData(this.list)
+      .subscribe((data) => {
+      console.log(data);
+      });
+  }
+
+  saveListTitle(event){
+    if (event.keyCode === 13 ){
+      this.savedTitle = true;
+    }
   }
 
 

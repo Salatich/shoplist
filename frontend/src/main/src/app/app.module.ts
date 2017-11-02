@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ListCreatingComponent } from './list-creating/list-creating.component';
 import { ListsComponent } from './lists/lists.component';
@@ -15,7 +15,8 @@ import { ListsComponent } from './lists/lists.component';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
