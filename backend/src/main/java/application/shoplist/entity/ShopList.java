@@ -25,13 +25,13 @@ public class ShopList {
     @Setter
     private String name;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @Getter
     @Setter
     private List<ListItem> items;
 
     @ManyToOne
-    @JoinColumn(name="user_id")
+    @JoinColumn(name = "user_id")
     @Getter
     @Setter
     private User user;
