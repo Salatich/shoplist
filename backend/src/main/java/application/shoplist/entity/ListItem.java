@@ -1,7 +1,6 @@
 package application.shoplist.entity;
 
 
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,7 +25,7 @@ public class ListItem {
 
 
     @ManyToOne
-    @JoinColumn(name="shop_list_id")
+    @JoinColumn(name = "shop_list_id")
     @Getter
     @Setter
     private ShopList shopList;
