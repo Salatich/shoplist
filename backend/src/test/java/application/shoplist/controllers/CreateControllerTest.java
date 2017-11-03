@@ -1,6 +1,5 @@
 package application.shoplist.controllers;
 
-
 import application.shoplist.dao.UserRepository;
 import application.shoplist.entity.ListItem;
 import application.shoplist.entity.ShopList;

@@ -28,7 +28,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUserByLogin(String login) {
+    public User findUserByLogin(String login) {
         return userRepository.findByLogin(login);
+    }
+
+    @Override
+    public void delete(User user) {
+        userRepository.delete(user);
     }
 }

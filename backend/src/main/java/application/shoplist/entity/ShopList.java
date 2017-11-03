@@ -19,8 +19,7 @@ public class ShopList {
     @Setter
     private int id;
 
-
-    @Column
+    @Column(unique = true)
     @Getter
     @Setter
     private String name;

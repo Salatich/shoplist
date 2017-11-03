@@ -7,6 +7,8 @@ public interface UserService {
 
     void save(User user);
 
-    User getUserByLogin(String login);
+    User findUserByLogin(String login);
+
+    void delete(User user);
 
 }

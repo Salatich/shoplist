@@ -15,12 +15,22 @@ public class ShopListServiceImpl implements ShopListService {
     private static final Logger logger = LoggerFactory.getLogger(ShopListService.class);
     private final ShopListRepository shopListRepository;
 
-    public ShopListServiceImpl(ShopListRepository shopListRepository){
+    public ShopListServiceImpl(ShopListRepository shopListRepository) {
         this.shopListRepository = shopListRepository;
     }
 
     @Override
     public void save(ShopList shopList) {
         shopListRepository.save(shopList);
+    }
+
+    @Override
+    public ShopList findShopListByName(String name) {
+        return shopListRepository.findShopListByName(name);
+    }
+
+    @Override
+    public void delete(ShopList shopList) {
+        shopListRepository.delete(shopList);
     }
 }

@@ -21,10 +21,18 @@ public class UserServiceImplTest {
     }
 
     @Test
-    public void testGetUserByLogin() {
+    public void testFindUserByLogin() {
         User user = new User();
         String login = "newUser";
         user.setLogin(login);
-        Mockito.when(userService.getUserByLogin(login)).thenReturn(user);
+        Mockito.when(userService.findUserByLogin(login)).thenReturn(user);
+    }
+
+    @Test
+    public void testDeleteUser(){
+        User user = new User();
+        userService.save(user);
+        userService.delete(user);
+        Mockito.verify(userService).delete(user);
     }
 }

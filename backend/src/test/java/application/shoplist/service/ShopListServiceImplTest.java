@@ -20,4 +20,20 @@ public class ShopListServiceImplTest {
         Mockito.verify(shopListService).save(list);
     }
 
+    @Test
+    public void testFindShopListByName(){
+        ShopList list = new ShopList();
+        String name = "newList";
+        list.setName("newList");
+        Mockito.when(shopListService.findShopListByName(name)).thenReturn(list);
+    }
+
+    @Test
+    public void deleteShopList(){
+        ShopList list = new ShopList();
+        shopListService.save(list);
+        shopListService.delete(list);
+        Mockito.verify(shopListService).delete(list);
+    }
+
 }
