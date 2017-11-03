@@ -1,5 +1,6 @@
 package application.shoplist.service;
 
+import application.shoplist.entity.ListItem;
 import application.shoplist.entity.ShopList;
 
 public interface ShopListService {

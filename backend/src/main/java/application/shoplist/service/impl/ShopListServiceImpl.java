@@ -1,6 +1,7 @@
 package application.shoplist.service.impl;
 
 import application.shoplist.dao.ShopListRepository;
+import application.shoplist.entity.ListItem;
 import application.shoplist.entity.ShopList;
 import application.shoplist.service.ShopListService;
 import com.jcabi.aspects.Loggable;
