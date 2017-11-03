@@ -10,16 +10,16 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class DataService {
- 
+
   constructor(private http: Http){ }
-  
+
   postData(obj: IList){
-    
+
     const body = JSON.stringify(obj);
-    
+
     let headers = new Headers({ 'Content-Type': 'application/json;charset=utf-8' });
-    
-    return this.http.post('http://localhost:8080/CreateList', body, { headers: headers })
+
+    return this.http.post('http://localhost:8080/createList', body, { headers: headers })
       .map((resp:Response)=>resp.json())
       .catch((error:any) =>{return Observable.throw(error);});
   }
