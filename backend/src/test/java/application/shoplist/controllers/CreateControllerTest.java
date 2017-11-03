@@ -27,10 +27,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
-public class ShopListControllerTest {
+public class CreateControllerTest {
 
-    private static final String CREATE_USER_PATH = "/createUser";
-    private static final String CREATE_LIST_PATH = "/createList";
+    private static final String CREATE_USER_PATH = "/create/user";
+    private static final String CREATE_LIST_PATH = "/create/list";
 
     private UserService userService = Mockito.mock(UserService.class);
 

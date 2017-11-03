@@ -15,18 +15,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class ShopListController {
+@RequestMapping("/create")
+public class CreateController {
 
     private final UserService userService;
     private final ShopListService shopListService;
 
-    public ShopListController(UserService userService, ShopListService shopListService) {
+    public CreateController(UserService userService, ShopListService shopListService) {
         this.userService = userService;
         this.shopListService = shopListService;
     }
 
 
-    @RequestMapping(path = "/createUser",
+    @RequestMapping(path = "/user",
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -39,7 +40,7 @@ public class ShopListController {
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
-    @RequestMapping(path = "/createList",
+    @RequestMapping(path = "/list",
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
