@@ -6,7 +6,7 @@ import {DataService} from "../services/data.service";
 @Component({
   selector: 'app-list-creating',
   templateUrl: './list-creating.component.html',
-  styleUrls: ['./list-creating.component.css'],
+  styleUrls: ['./list-creating.component.scss'],
   providers: [DataService]
 })
 export class ListCreatingComponent implements OnInit {

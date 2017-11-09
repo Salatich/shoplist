@@ -1,0 +1,20 @@
+.btn{
+  padding: 10px 15px;
+  color: #333333;
+  margin: 5px 0;
+
+  &_add-list{
+    background: #eee;
+    padding-top: 55px;
+    position: relative;
+    &:before{
+      content: '\f067 ';
+      font-family: 'FontAwesome';
+      font-size: 18px;
+      display: block;
+      position: absolute;
+      top:15px;
+      left: 33px;
+    }
+  }
+}

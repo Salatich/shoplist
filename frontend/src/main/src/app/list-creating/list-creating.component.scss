@@ -4,15 +4,15 @@
   padding: 0;
   list-style: none;
 }
-.item{
+
+.item {
   margin-bottom: 5px;
-}
-.item__num{
-  margin-right: 5px;
+  &__num {
+    margin-right: 5px;
+  }
 }
 
-
-.disable{
+.disable {
   pointer-events: none;
   border: none;
   outline: none;
@@ -21,7 +21,7 @@
   background: transparent;
 }
 
-.text-input{
+.text-input {
   padding: 5px;
   outline: none;
 }
