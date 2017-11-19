@@ -25,7 +25,11 @@ export class ListCreatingComponent implements OnInit {
   ngOnInit() {
   }
 
-
+  addItemOnKeypress(event){
+    if (event.keyCode === 13 ){
+      this.addItem();
+    }
+  }
   addItem() {
     this.item && this.items.push(
       new IItem(this.item)
@@ -48,6 +52,14 @@ export class ListCreatingComponent implements OnInit {
     if (event.keyCode === 13 ){
       this.savedTitle = true;
     }
+  }
+
+  editListTitle(){
+    this.savedTitle = false;
+  }
+
+  deleteItem(index){
+    this.items.splice(index,1);
   }
 
 

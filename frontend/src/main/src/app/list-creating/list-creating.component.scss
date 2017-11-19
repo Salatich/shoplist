@@ -25,3 +25,14 @@
   padding: 5px;
   outline: none;
 }
+
+.line {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  flex-wrap: wrap;
+  &__title{
+    margin-bottom: 10px;
+    width:100%;
+  }
+}

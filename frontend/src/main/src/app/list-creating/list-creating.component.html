@@ -1,27 +1,38 @@
 
-<label>
-  Insert the name of list:
-</label>
-<input
-  class="text-input"
-  type="text"
-  placeholder="name"
-  [(ngModel)]="listTitle"
-  (keypress)="saveListTitle($event)"
-  [class.disable]="savedTitle"
-  [disabled]="savedTitle"
->
-<p>
-  Insert the item of list
-</p>
-<input
-  class="text-input"
-  type="text"
-  placeholder="item"
-  [(ngModel)]="item"
->
+<div class="line">
+  <p class="line__title">
+    Insert the name of list:
+  </p>
+  <input
+    class="text-input"
+    type="text"
+    placeholder="name"
+    [(ngModel)]="listTitle"
+    (keypress)="saveListTitle($event)"
+    [class.disable]="savedTitle"
+    [disabled]="savedTitle"
+  >
+  <button [hidden]="!savedTitle" class="btn btn_sm" (click)="editListTitle()">
+    <i class="fa fa-pencil" aria-hidden="true"></i>
+  </button>
+</div>
 
-<button (click)="addItem()" class="btn btn-primary">add</button>
+<div class="line">
+
+  <p class="line__title">
+    Insert the item of list
+  </p>
+  <input
+    class="text-input"
+    type="text"
+    placeholder="item"
+    [(ngModel)]="item"
+    (keypress)="addItemOnKeypress($event)"
+  >
+
+  <button (click)="addItem()" class="btn btn-primary">add</button>
+
+</div>
 
 <ul class="list">
   <li
@@ -30,10 +41,13 @@
   >
     <span class="item__num">{{i+1}}.</span>
     {{item.description}}
+    <button class="btn btn_sm btn_del" (click)="deleteItem(i)">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
   </li>
 </ul>
 
 <a routerLink="/lists" (click)="saveList()" class="btn btn-success">save list</a>
 
 
-<a routerLink="/lists"  class="btn btn-primary">back</a>
+<a routerLink="/lists" class="btn btn-primary">back</a>
