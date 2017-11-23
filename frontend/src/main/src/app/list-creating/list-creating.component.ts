@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {IList} from "../IList";
-import {IItem} from "../IItem";
+import {IList} from "../models/IList";
+import {IItem} from "../models/IItem";
 import {DataService} from "../services/data.service";
 
 @Component({
@@ -42,7 +42,7 @@ export class ListCreatingComponent implements OnInit {
     this.list.name = this.listTitle;
     this.list.items = this.items;
     console.log(JSON.stringify(this.list));
-    this.dataService.postData(this.list)
+    this.dataService.postList(this.list)
       .subscribe((data) => {
       console.log(data);
       });

@@ -3,12 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ListsComponent }   from './lists/lists.component';
 import { ListCreatingComponent }      from './list-creating/list-creating.component';
+import { EntryComponent }      from './entry/entry.component';
+import {AuthGuard} from "./guards/auth.guard";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/lists', pathMatch: 'full' },
-  { path: 'lists', component: ListsComponent },
+  { path: '',component: ListsComponent , canActivate: [AuthGuard] },
+  // { path: 'lists', component: ListsComponent },
   { path: 'creating-list', component: ListCreatingComponent },
-  // { path: 'heroes', component: HeroesComponent }
+  { path: 'entry', component: EntryComponent },
+
+  // otherwise redirect to home
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

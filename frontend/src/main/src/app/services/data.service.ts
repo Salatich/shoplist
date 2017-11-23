@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Http} from '@angular/http';
 import {Response, Headers} from '@angular/http';
-import {IList} from '../IList';
+import {IList} from '../models/IList';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -13,7 +13,7 @@ export class DataService {
 
   constructor(private http: Http){ }
 
-  postData(obj: IList){
+  postList(obj: IList){
 
     const body = JSON.stringify(obj);
 
@@ -23,4 +23,5 @@ export class DataService {
       .map((resp:Response)=>resp.json())
       .catch((error:any) =>{return Observable.throw(error);});
   }
+  getLists(){  }
 }

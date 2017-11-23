@@ -8,14 +8,18 @@ import { ListCreatingComponent } from './list-creating/list-creating.component';
 import { ListsComponent } from './lists/lists.component';
 
 
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import {DataService} from "./services/data.service";
+import { EntryComponent } from './entry/entry.component';
+import {AuthenticationService} from "./services/authentication.service";
+import {AuthGuard} from "./guards/auth.guard";
 
 @NgModule({
   declarations: [
     AppComponent,
     ListCreatingComponent,
-    ListsComponent
+    ListsComponent,
+    EntryComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,7 @@ import {DataService} from "./services/data.service";
     HttpModule,
     AppRoutingModule
   ],
-  providers: [DataService],
+  providers: [DataService,AuthenticationService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
