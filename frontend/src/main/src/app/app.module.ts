@@ -10,16 +10,20 @@ import { ListsComponent } from './lists/lists.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import {DataService} from "./services/data.service";
-import { EntryComponent } from './entry/entry.component';
 import {AuthenticationService} from "./services/authentication.service";
 import {AuthGuard} from "./guards/auth.guard";
+import { HeaderComponent } from './header/header.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListCreatingComponent,
     ListsComponent,
-    EntryComponent
+    HeaderComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

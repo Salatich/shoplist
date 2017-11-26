@@ -1,0 +1,18 @@
+<header class="header">
+  <h1 class="header__title">ShopList application</h1>
+
+  <button
+    class="btn header_btn"
+    *ngIf="authService.isAuthenticated()"
+    (click)="onLogout()"
+  >
+    logout
+  </button>
+  <a
+    routerLink="/signin"
+    class="btn header_btn"
+    *ngIf="!authService.isAuthenticated()"
+  >
+    login
+  </a>
+</header>
