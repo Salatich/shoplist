@@ -1,7 +1,8 @@
 package application.shoplist.service;
 
-import application.shoplist.entity.ListItem;
 import application.shoplist.entity.ShopList;
+
+import java.util.ArrayList;
 
 public interface ShopListService {
 
@@ -10,4 +11,6 @@ public interface ShopListService {
     ShopList findShopListByName(String name);
 
     void delete(ShopList shopList);
+
+    ArrayList<ShopList> getAll();
 }

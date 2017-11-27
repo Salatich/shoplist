@@ -9,6 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 @Loggable(value = Loggable.DEBUG, prepend = true, trim = false)
 public class ShopListServiceImpl implements ShopListService {
@@ -25,6 +27,8 @@ public class ShopListServiceImpl implements ShopListService {
         shopListRepository.save(shopList);
     }
 
+
+
     @Override
     public ShopList findShopListByName(String name) {
         return shopListRepository.findShopListByName(name);
@@ -33,5 +37,10 @@ public class ShopListServiceImpl implements ShopListService {
     @Override
     public void delete(ShopList shopList) {
         shopListRepository.delete(shopList);
+    }
+
+    @Override
+    public ArrayList<ShopList> getAll() {
+        return shopListRepository.findAll();
     }
 }
