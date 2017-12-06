@@ -15,6 +15,7 @@ import {AuthGuard} from "./guards/auth.guard";
 import { HeaderComponent } from './header/header.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import {ListsDataResolveService} from "./services/lists-data-resolve.service";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { SignupComponent } from './auth/signup/signup.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [DataService,AuthenticationService,AuthGuard],
+  providers: [DataService,AuthenticationService,AuthGuard,ListsDataResolveService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -23,5 +23,12 @@ export class DataService {
       .map((resp:Response)=>resp.json())
       .catch((error:any) =>{return Observable.throw(error);});
   }
-  getLists(){  }
+  getLists(): Observable<IList[]>{
+    let headers = new Headers({ 'Content-Type': 'application/json;charset=utf-8' });
+
+    return this.http.get('http://localhost:8080/get/lists', { headers: headers })
+      .map((resp:Response)=>resp.json())
+      .catch((error:any) =>{return Observable.throw(error);});
+
+  }
 }

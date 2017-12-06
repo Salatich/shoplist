@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {IList} from "../models/IList";
 import {IItem} from "../models/IItem";
 import {DataService} from "../services/data.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-list-creating',
@@ -9,7 +10,7 @@ import {DataService} from "../services/data.service";
   styleUrls: ['./list-creating.component.scss'],
   providers: [DataService]
 })
-export class ListCreatingComponent implements OnInit {
+export class ListCreatingComponent {
 
   savedTitle: boolean = false;
   listTitle: string;
@@ -19,10 +20,7 @@ export class ListCreatingComponent implements OnInit {
 
   list: IList = new IList();
 
-  constructor(private dataService: DataService) {
-  }
-
-  ngOnInit() {
+  constructor(private dataService: DataService, private router: Router) {
   }
 
   addItemOnKeypress(event){
@@ -41,10 +39,10 @@ export class ListCreatingComponent implements OnInit {
   saveList() {
     this.list.name = this.listTitle;
     this.list.items = this.items;
-    console.log(JSON.stringify(this.list));
     this.dataService.postList(this.list)
       .subscribe((data) => {
-      console.log(data);
+        console.log(data);
+        this.router.navigate(['/']);
       });
   }
 

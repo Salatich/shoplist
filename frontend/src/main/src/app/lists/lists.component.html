@@ -1,8 +1,22 @@
 <a routerLink="/creating-list"  class="btn btn_add-list">
   add list
 </a>
-<div class="" *ngIf="listsNotEmpty">
-  <p>existed lists:</p>
 
+<div class="list-container" *ngIf="lists.length">
+
+  <h3 class="list-container__title">your lists:</h3>
+
+  <div class="list" *ngFor="let list of lists">
+    <div class="list__title">
+      {{list.name}}
+    </div>
+    <ul class="list__items">
+      <li *ngFor="let item of list.items; let i = index" class="list__item item">
+
+        <span class="item__num">{{i+1}}.</span>
+        {{item.description}}
+      </li>
+    </ul>
+  </div>
 </div>
 
